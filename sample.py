@@ -3,7 +3,7 @@ import numpy as np
 import cv2
 from PIL import Image
 
-pic_path = "bg_pic"
+pic_path = "bg_pic2"
 x = 1
 for filename in os.listdir(pic_path):
     print(filename)
@@ -29,6 +29,6 @@ for filename in os.listdir(pic_path):
 
     ran_x2 = ran_x1 + ran_w
     ran_y2 = ran_y1 + ran_w
-    for i in range(1, 9001):
-        bg_resize.save("data/{0}{1}.png".format(x, "." + str(ran_x1) + "." + str(ran_y1) +
-                                                "." + str(ran_x2) + "." + str(ran_y2)))
+    bg_resize.save("test_data/{0}{1}.png".format(x, "." + str(ran_x1) + "." + str(ran_y1) +
+                                            "." + str(ran_x2) + "." + str(ran_y2)))
+    x += 1
