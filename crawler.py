@@ -4,7 +4,7 @@ import os
 import re
 
 
-def main(save_img_dir="bg_pic2"):
+def main(save_img_dir="F:\origindata"):
     word = input("请输入关键词：")
 
     img_dir = save_img_dir
@@ -52,4 +52,4 @@ def main(save_img_dir="bg_pic2"):
 
 
 if __name__ == '__main__':
-    main(save_img_dir="bg_pic2")
+    main(save_img_dir="F:\origindata")

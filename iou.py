@@ -1,6 +1,6 @@
 import numpy as np
 
-def IOU(box, boxes):
+def IOU(box, boxes,isMin=False):
     box_area = (box[:, 2] - box[:, 0]) * (box[:, 3] - box[:, 1])
     boxes_area = (boxes[:, 2] - boxes[:, 0]) * (boxes[:, 3] - boxes[:, 1])
 
@@ -13,7 +13,10 @@ def IOU(box, boxes):
     h = np.maximum(0,ry-ly)
 
     inter = w*h
-    ovr = np.true_divide(inter,(box_area+boxes_area-inter))
+    if isMin:
+        ovr = np.true_divide((inter,np.minimum(box_area,boxes_area)))
+    else:
+        ovr = np.true_divide(inter,(box_area+boxes_area-inter))
 
     return ovr
 
